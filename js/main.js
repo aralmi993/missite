@@ -83,4 +83,31 @@ jQuery(function($) {'use strict';
 		$(this).css('width', $(this).attr('data-transition')+'%');
 	});
 
+	if( $('#gmap').length ) {
+		var map;
+
+		map = new GMaps({
+			el: '#gmap',
+			lat: 55.78983379256157,
+			lng: 37.595084379758255,
+			scrollwheel:false,
+			zoom: 16,
+			zoomControl : true,
+			panControl : true,
+			streetViewControl : false,
+			mapTypeControl: false,
+			overviewMapControl: false,
+			clickable: false
+		});
+
+		map.addMarker({
+			lat: 55.78983379256157,
+			lng: 37.595084379758255,
+			animation: google.maps.Animation.DROP,
+			verticalAlign: 'bottom',
+			horizontalAlign: 'center',
+			backgroundColor: '#3e8bff',
+		});
+	}
+
 });
